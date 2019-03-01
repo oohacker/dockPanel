@@ -37,6 +37,20 @@ html {
 
     <a href="javascript:;" onclick="showPanel()">show panel</a> / 
     <a href="javascript:;" onclick="hidePanel()">hide panel</a>
+
+    <h3>Usage:</h3>
+    <p>
+        <h4>init</h4>
+        <code>$(selector).dockPanel({dock: <i>['left' | 'right' | 'top' | 'bottom' ]</i> }) </code>
+        <h4>example:</h4>
+        <code>$("#panel").dockPanel({dock: 'right'});</code>
+
+        <br>
+        <br>
+        <h4>methods:</h4>
+        <code><b>show:</b> $(selector).dockPanel(<i>'show'</i>)</code><br>
+        <code><b>hide:</b> $(selector).dockPanel(<i>'hide'</i>)</code>
+    </p>
     <script>
         
         function hidePanel() {
