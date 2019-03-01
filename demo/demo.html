@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>dock-panel demo</title>
+<script src='scripts/jquery.min.js'></script>
+<script src='../src/dockPanel-1.0.0.js'></script>
+<style type="text/css">
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+  body {
+      position: absolute;
+      background-image: url(https://img.pconline.com.cn/images/upload/upc/tx/itbbs/1109/16/c0/8975173_1316108648399_1024x1024it.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width:100%;
+      height: 100%;
+      padding: 20px;
+      margin: 0px;
+      box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+
+    <div id='panelRight' style='display:none;width:300px;background:#333;opacity: 0.85'>
+        <div style='position:absolute; left:5px;right:5px;top:5px;width:36px;height:36px;border-radius: 5px;background:#fff; cursor:pointer;'>
+            <img src='images/collapse.png' style='width:32px;height:32px;margin:2px;border-radius: 5px;' onclick='hidePanel()'>
+        </div>
+    </div>
+
+
+    <a href="javascript:;" onclick="showPanel()">show panel</a> / 
+    <a href="javascript:;" onclick="hidePanel()">hide panel</a>
+    <script>
+        
+        function hidePanel() {
+            $('#panelRight').dockPanel('hide', ()=>{ console.log('panel collapsed') });
+        }
+
+        function showPanel() {
+            $('#panelRight').dockPanel('show', ()=>{ console.log('panel shown') });
+        }
+    
+       $(function() {
+            $('#panelRight').dockPanel({dock: 'right'});
+       });
+    </script>
+</body>
+</html>
